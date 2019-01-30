@@ -1,21 +1,92 @@
-<!--The content below is only a placeholder and can be replaced.-->
-<div style="text-align:center">
-  <h1>
-    Welcome to {{ title }}!
-  </h1>
-  <img width="300" alt="Angular Logo" src="data:image/svg+xml;base64,PHN2ZyB4bWxucz0iaHR0cDovL3d3dy53My5vcmcvMjAwMC9zdmciIHZpZXdCb3g9IjAgMCAyNTAgMjUwIj4KICAgIDxwYXRoIGZpbGw9IiNERDAwMzEiIGQ9Ik0xMjUgMzBMMzEuOSA2My4ybDE0LjIgMTIzLjFMMTI1IDIzMGw3OC45LTQzLjcgMTQuMi0xMjMuMXoiIC8+CiAgICA8cGF0aCBmaWxsPSIjQzMwMDJGIiBkPSJNMTI1IDMwdjIyLjItLjFWMjMwbDc4LjktNDMuNyAxNC4yLTEyMy4xTDEyNSAzMHoiIC8+CiAgICA8cGF0aCAgZmlsbD0iI0ZGRkZGRiIgZD0iTTEyNSA1Mi4xTDY2LjggMTgyLjZoMjEuN2wxMS43LTI5LjJoNDkuNGwxMS43IDI5LjJIMTgzTDEyNSA1Mi4xem0xNyA4My4zaC0zNGwxNy00MC45IDE3IDQwLjl6IiAvPgogIDwvc3ZnPg==">
+<div class="content-container">
+          <div style="text-align:center">
+              <h1>
+                  Deployed by VMware Cloud Automation Services
+              </h1>
+              <div class="clr-row">
+                  <div class="clr-col-lg-4 clr-col-12" style="margin:0 auto;">
+                      <a href="..." class="card clickable">
+                          <div class="card-img">
+                              <img src="../assets/ca.svg" style="width: 50%; margin:0 auto;"/>
+                          </div>
+                          <div class="card-block">
+                              <p class="card-text">
+                                  Declarative, multi-cloud orchestration and automation solution that enables
+                                  infrastructure as code for expedited infrastructure consumption and application
+                                  delivery. 
+                          </div>
+                      </a>
+                  </div>
+                  <div class="clr-col-lg-4 clr-col-12" style="margin:0 auto;">
+                      <a href="..." class="card clickable">
+                          <div class="card-img">
+                              <img src="../assets/sb.svg" style="width: 50%; margin:0 auto;"/>
+                          </div>
+                          <div class="card-block">
+                              <p class="card-text">
+                                  Policy driven platform for aggregating content in native formats from multiple
+                                  clouds and platforms into a common catalog for consumption through UI or API, with
+                                  policy driven guardrails.
+                              </p>
+                          </div>
+                      </a>
+                  </div>
+                  <div class="clr-col-lg-4 clr-col-12" style="margin:0 auto;">
+                      <a href="..." class="card clickable">
+                          <div class="card-img">
+                              <img src="../assets/cs.svg" style="width: 50%; margin:0 auto;"/>
+                          </div>
+                          <div class="card-block">
+                              <p class="card-text">
+                                  Provides release automation and continuous delivery to enable frequent, reliable
+                                  releases of application and IT code for development, infrstructure and operations teams. </p>
+                          </div>
+                      </a>
+                  </div>
+              </div>
+              <div>
+              <form #f="ngForm" class="clr-form clr-form-horizontal" (ngSubmit)="onSubmit(f.value)">
+                  <div class="clr-form-control" style="text-align: center">
+                      <label for="example" class="clr-control-label">CSP API Token</label>
+                      <div class="clr-control-container">
+                          <div class="clr-input-wrapper">
+                              <input type="text" [(ngModel)]="cspapitoken" name="cspapitoken" id="cspapitoken" placeholder="Enter the CSP Refresh Token"
+                                  class="clr-text" required>
+                              <clr-icon class="clr-validate-icon" shape="exclamation-circle"></clr-icon>
+                          </div>
+                      </div>
+                  </div>
+                  <br>
+                  <button type="submit" [disabled]="!f.valid" class="btn btn-primary">Submit</button>
+                  <br>
+              </form>
+              </div>
+              <div>
+              <table class="table" style="width: 50%; margin: 0 auto">
+                  <thead>
+                      <tr>
+                          <th>Blueprints</th>
+                          <th>Cloud Accounts</th>
+                          <th>Deployments</th>
+                          <th>Projects</th>
+                      </tr>
+                  </thead>
+                  <tbody>
+                      <tr>
+                          <td>{{casdata?.bps}}</td>
+                          <td>{{casdata?.cloudaccounts}}</td>
+                          <td>{{casdata?.deployments}}</td>
+                          <td>{{casdata?.projects}}</td>
+                      </tr>
+                  </tbody>
+              </table>
+              <br>
+          </div>
+              <div style="margin:0 auto;">
+                  <div>
+                  <img src="../assets/Vmware-Clariy-logo-2.png" width="100">
+                  Powered by VMware Clarity
+              </div>
+          </div>
+      </div>
 </div>
-<h2>Here are some links to help you start: </h2>
-<ul>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/tutorial">Tour of Heroes</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://angular.io/cli">CLI Documentation</a></h2>
-  </li>
-  <li>
-    <h2><a target="_blank" rel="noopener" href="https://blog.angular.io/">Angular blog</a></h2>
-  </li>
-</ul>
-
-<router-outlet></router-outlet>
