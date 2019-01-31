@@ -5,6 +5,7 @@ import { AppComponent } from './app.component';
 import { ClarityModule } from "@clr/angular";
 import { FormsModule } from "@angular/forms";
 import { HttpClientModule } from '@angular/common/http';
+import { ChartsModule } from 'ng2-charts';
 
 
 
@@ -17,7 +18,8 @@ import { HttpClientModule } from '@angular/common/http';
     AppRoutingModule,
     FormsModule,
     HttpClientModule,
-    ClarityModule
+    ClarityModule,
+    ChartsModule
   ],
   providers: [],
   bootstrap: [AppComponent]

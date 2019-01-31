@@ -3,7 +3,7 @@ import { HttpClient, HttpHeaders, HttpErrorResponse } from '@angular/common/http
 import { Observable, of } from 'rxjs';
 import { map, catchError, tap } from 'rxjs/operators';
 
-const endpoint = 'http://172.24.22.91/api/cas'
+const endpoint = 'http://changeme/api/cas'
 const httpOptions = {
   headers: new HttpHeaders({
     'Content-Type':  'application/json'
