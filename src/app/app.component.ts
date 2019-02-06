@@ -38,7 +38,7 @@ export class AppComponent {
   public polarAreaChartLabels:string[] = ['Blueprints','Cloud Accounts','Deployments','Projects'];
   public polarAreaLegend:boolean = true;
  
-  public polarAreaChartType:string = 'polarArea';
+  public polarAreaChartType:string = 'doughnut';
 
 
   constructor(private rs: RestService) {}
