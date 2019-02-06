@@ -24,6 +24,8 @@ export class AppComponent {
 
   public barChartData:any[];
 
+  public polarAreaChartData:number[];
+
   public barChartOptions:any = {
     scaleShowVerticalLines: false,
     responsive: true,
@@ -33,15 +35,18 @@ export class AppComponent {
   public barChartType = 'bar';
   public barChartLegend = false;
 
+  public polarAreaChartLabels:string[] = ['Blueprints','Cloud Accounts','Deployments','Projects'];
+  public polarAreaLegend:boolean = true;
+ 
+  public polarAreaChartType:string = 'polarArea';
+
+
   constructor(private rs: RestService) {}
 
   onSubmit(token: Token) {
     this.rs.newCall(token).subscribe((data: Casdata) => {
       this.casdata = data;
-      this.barChartData = [{
-        data: [data.bps, data.cloudaccounts, data.deployments, data.projects],
-        label: 'Data'
-      }];
+      this.polarAreaChartData = [data.bps, data.cloudaccounts, data.deployments, data.projects];
       console.log(data)
     });
     this.formValues.resetForm();
