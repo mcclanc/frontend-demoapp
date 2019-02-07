@@ -45,7 +45,6 @@ export class AppComponent {
   constructor(private rs: RestService) {}
 
   onSubmit(token: Token) {
-    this.polarAreaChartData = [];
     this.show = true;
     this.rs.newCall(token).subscribe((data: Casdata) => {
       this.casdata = data;
