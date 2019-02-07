@@ -40,12 +40,15 @@ export class AppComponent {
  
   public polarAreaChartType:string = 'doughnut';
 
+  public show:boolean = false;
 
   constructor(private rs: RestService) {}
 
   onSubmit(token: Token) {
+    this.show = true;
     this.rs.newCall(token).subscribe((data: Casdata) => {
       this.casdata = data;
+      this.show = false;
       this.polarAreaChartData = [data.bps, data.cloudaccounts, data.deployments, data.projects];
       console.log(data)
     });
